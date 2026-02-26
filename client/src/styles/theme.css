@@ -885,44 +885,40 @@ body {
     width: 100%;
   }
 }
-
-
-.auth-card {
-  background: rgba(255, 255, 255, 0.04);
-  padding: 32px;
-  border-radius: 14px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  max-width: 460px;
-  width: 100%;
-  margin-left: 40px;
-}
-/* =========================
-   AUTH PAGE — FINAL FIX
-   ========================= */
-
+/* AUTH PAGE — FIXED FOR MOBILE CENTERING */
 .auth-page {
   position: fixed;
-  inset: 0;
+  inset: 0; /* top:0; bottom:0; left:0; right:0 */
   display: flex;
   align-items: center;
   justify-content: center;
   background: radial-gradient(circle at top, #1b2735 0%, #090a0f 60%);
   z-index: 999;
+  padding: 16px; /* <-- important for small screens */
+  box-sizing: border-box; /* ensure padding doesn't break centering */
 }
 
+/* Auth card wrapper */
 .auth-card,
 .clerk-wrapper {
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
+  box-sizing: border-box; /* include padding in width calculation */
 }
 
+/* Ensure inner content fills width */
 .clerk-wrapper > div {
   width: 100%;
+  box-sizing: border-box;
 }
 
-
-
+/* Optional: smaller padding on mobile */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 24px;
+  }
+}
 .daily-fact-card {
   margin: 20px auto;
   padding: 16px 20px;
