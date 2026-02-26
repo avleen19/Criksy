@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* GAMES PAGE TWEAKS */
+.page .home-title {
+  margin-bottom: 10px;
+}
+
+.page .home-subtitle {
+  margin-bottom: 50px;
+}
