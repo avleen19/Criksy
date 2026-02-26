@@ -894,6 +894,7 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   max-width: 460px;
   width: 100%;
+  margin-left: 40px;
 }
 /* =========================
    AUTH PAGE — FINAL FIX

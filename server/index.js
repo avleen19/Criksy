@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_URL,
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -28,7 +28,13 @@ app.use("/api/leaderboard", leaderboardRoutes);
 app.use("/api/hints", hintRoutes);
 
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: "*" } });
+const io = new Server(server, {
+  cors: {
+    origin: process.env.CLIENT_URL,
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
+});
 
 
 const rooms = {};
@@ -280,4 +286,8 @@ socket.on("submit-guess", async ({ roomId, guess }) => {
   });
 });
 
-server.listen(5000, () => console.log("🚀 Server running on http://localhost:5000"));
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () =>
+  console.log(`🚀 Server running on port ${PORT}`)
+);
