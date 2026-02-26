@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { SignedIn, SignedOut } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -30,15 +31,15 @@ export default function App() {
                 <RoomLobby />
               </SignedIn>
               <SignedOut>
-                <div className="page center">
-                  <div className="login-required">
-                    <h2>🔐 Multiplayer requires login</h2>
-                    <a href="/sign-in" className="login-continue">
-                      Login to Continue
-                    </a>
-                  </div>
-                </div>
-              </SignedOut>
+  <div className="page center">
+    <div className="login-required">
+      <h2>🔐 Multiplayer requires login</h2>
+      <Link to="/sign-in" className="login-continue">
+        Login to Continue
+      </Link>
+    </div>
+  </div>
+</SignedOut>
             </>
           }
         />
@@ -51,15 +52,15 @@ export default function App() {
                 <GameRoom />
               </SignedIn>
               <SignedOut>
-                <div className="page center">
-                  <div className="login-required">
-                    <h2>🔐 Multiplayer requires login</h2>
-                    <a href="/sign-in" className="login-continue">
-                      Login to Continue
-                    </a>
-                  </div>
-                </div>
-              </SignedOut>
+  <div className="page center">
+    <div className="login-required">
+      <h2>🔐 Multiplayer requires login</h2>
+      <Link to="/sign-in" className="login-continue">
+        Login to Continue
+      </Link>
+    </div>
+  </div>
+</SignedOut>
             </>
           }
         />
