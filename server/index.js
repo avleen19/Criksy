@@ -30,13 +30,19 @@ app.use("/api/hints", hintRoutes);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin: process.env.CLIENT_URL, // frontend URL
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
 
-console.log("CLIENT_URL:", process.env.CLIENT_URL);
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL, // frontend URL
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 const rooms = {};
 const timers = {};
 
