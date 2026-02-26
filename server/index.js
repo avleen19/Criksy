@@ -36,7 +36,7 @@ const io = new Server(server, {
   },
 });
 
-
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
 const rooms = {};
 const timers = {};
 
